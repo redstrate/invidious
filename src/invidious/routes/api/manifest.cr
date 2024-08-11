@@ -143,7 +143,7 @@ module Invidious::Routes::API::Manifest
   def self.get_dash_video_playback(env)
     env.response.headers.delete("Content-Type")
     env.response.headers["Access-Control-Allow-Origin"] = "*"
-    env.redirect "/videoplayback?#{env.params.query}"
+env.redirect "/videoplayback?po=#{CONFIG.po_token}&#{env.params.query}"
   end
 
   # /api/manifest/dash/id/videoplayback/*
